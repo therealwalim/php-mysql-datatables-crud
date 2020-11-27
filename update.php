@@ -6,7 +6,7 @@ if(isset($_POST["id"]))
  $query = "UPDATE user SET ".$_POST["column_name"]."='".$value."' WHERE id = '".$_POST["id"]."'";
  if(mysqli_query($connect, $query))
  {
-  echo 'Data Updated';
+  echo 'Donnée modifiée';
  }
 }
 ?>

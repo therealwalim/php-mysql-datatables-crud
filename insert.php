@@ -7,7 +7,7 @@ if(isset($_POST["first_name"], $_POST["last_name"]))
  $query = "INSERT INTO user(first_name, last_name) VALUES('$first_name', '$last_name')";
  if(mysqli_query($connect, $query))
  {
-  echo 'Data Inserted';
+  echo 'Donnée créée';
  }
 }
 ?>
