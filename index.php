@@ -80,6 +80,7 @@
                         <th>categorie</th>
                         <th>numero</th>
                         <th>date</th>
+                        <th></th>
                     </tr>
                 </thead>
             </table>
@@ -178,13 +179,20 @@
             var numero = $('#data8').text();
             var date = $('#data9').text();
 
-            if (name != '' && openradio != '' && comentaire != '' && projet != '' && designation != '' && valide != '' && categorie != '' && numero != '' && date != '') {
+            if (name != '' && openradio != '' && commentaire != '' && projet != '' && designation != '' && valide != '' && categorie != '' && numero != '' && date != '') {
                 $.ajax({
                     url: "insert.php",
                     method: "POST",
                     data: {
-                        first_name: first_name,
-                        last_name: last_name
+                        name: name,
+                        openradio: openradio,
+                        commentaire: commentaire,
+                        projet: projet,
+                        designation: designation,
+                        valide: valide,
+                        categorie: categorie,
+                        numero: numero,
+                        date: date
                     },
                     success: function(data) {
                         const Toast = Swal.mixin({
