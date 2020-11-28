@@ -177,9 +177,8 @@
             var valide = $('#data6').text();
             var categorie = $('#data7').text();
             var numero = $('#data8').text();
-            var date = $('#data9').text();
 
-            if (name != '' && openradio != '' && commentaire != '' && projet != '' && designation != '' && valide != '' && categorie != '' && numero != '' && date != '') {
+            if (name != '' && openradio != '' && commentaire != '' && projet != '' && designation != '' && valide != '' && categorie != '' && numero != '') {
                 $.ajax({
                     url: "insert.php",
                     method: "POST",
@@ -192,7 +191,6 @@
                         valide: valide,
                         categorie: categorie,
                         numero: numero,
-                        date: date
                     },
                     success: function(data) {
                         const Toast = Swal.mixin({

@@ -11,7 +11,7 @@ if(isset($_POST["name"], $_POST["openradio"], $_POST["commentaire"], $_POST["pro
  $valide = mysqli_real_escape_string($connect, $_POST["valide"]);
  $categorie = mysqli_real_escape_string($connect, $_POST["categorie"]);
  $numero = mysqli_real_escape_string($connect, $_POST["numero"]);
- $date = mysqli_real_escape_string($connect, $_POST["date"]);
+ $date = date("Y-m-d");
  $query = "INSERT INTO developer(name, openradio, commentaire, projet, designation, valide, categorie, numero, date) VALUES('$name', '$openradio', '$commentaire', '$projet', '$designation', '$valide', '$categorie', '$numero', '$date')";
  if(mysqli_query($connect, $query))
  {
