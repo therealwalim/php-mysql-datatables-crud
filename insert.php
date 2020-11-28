@@ -12,7 +12,7 @@ if(isset($_POST["name"], $_POST["openradio"], $_POST["commentaire"], $_POST["pro
  $categorie = mysqli_real_escape_string($connect, $_POST["categorie"]);
  $numero = mysqli_real_escape_string($connect, $_POST["numero"]);
  $date = mysqli_real_escape_string($connect, $_POST["date"]);
- $query = "INSERT INTO user(name, openradio, commentaire, projet, designation, valide, categorie, numero, date) VALUES('$name', '$openradio', '$commentaire', '$projet', '$designation', '$valide', '$categorie', '$numero', '$date')";
+ $query = "INSERT INTO developer(name, openradio, commentaire, projet, designation, valide, categorie, numero, date) VALUES('$name', '$openradio', '$commentaire', '$projet', '$designation', '$valide', '$categorie', '$numero', '$date')";
  if(mysqli_query($connect, $query))
  {
   echo 'Donnée créée';

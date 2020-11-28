@@ -4,7 +4,7 @@
 $connect = mysqli_connect("localhost", "root", "", "testing");
 $columns = array('name', 'openradio', 'commentaire', 'projet', 'designation', 'valide', 'categorie', 'numero', 'date');
 
-$query = "SELECT * FROM user ";
+$query = "SELECT * FROM developer ";
 
 if(isset($_POST["search"]["value"]))
 {
@@ -62,7 +62,7 @@ while($row = mysqli_fetch_array($result))
 
 function get_all_data($connect)
 {
- $query = "SELECT * FROM user";
+ $query = "SELECT * FROM developer";
  $result = mysqli_query($connect, $query);
  return mysqli_num_rows($result);
 }
