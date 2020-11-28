@@ -71,9 +71,15 @@
             <table id="user_data" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Actions</th>
+                        <th>name</th>
+                        <th>openradio</th>
+                        <th>commentaire</th>
+                        <th>projet</th>
+                        <th>designation</th>
+                        <th>valide</th>
+                        <th>categorie</th>
+                        <th>numero</th>
+                        <th>date</th>
                     </tr>
                 </thead>
             </table>
@@ -149,15 +155,30 @@
             var html = '<tr>';
             html += '<td contenteditable id="data1"></td>';
             html += '<td contenteditable id="data2"></td>';
+            html += '<td contenteditable id="data3"></td>';
+            html += '<td contenteditable id="data4"></td>';
+            html += '<td contenteditable id="data5"></td>';
+            html += '<td contenteditable id="data6"></td>';
+            html += '<td contenteditable id="data7"></td>';
+            html += '<td contenteditable id="data8"></td>';
+            html += '<td contenteditable id="data9"></td>';
             html += '<td><button type="button" name="insert" id="insert" class="btn btn-success btn-xs">Insert</button></td>';
             html += '</tr>';
             $('#user_data tbody').prepend(html);
         });
 
         $(document).on('click', '#insert', function() {
-            var first_name = $('#data1').text();
-            var last_name = $('#data2').text();
-            if (first_name != '' && last_name != '') {
+            var name = $('#data1').text();
+            var openradio = $('#data2').text();
+            var commentaire = $('#data3').text();
+            var projet = $('#data4').text();
+            var designation = $('#data5').text();
+            var valide = $('#data6').text();
+            var categorie = $('#data7').text();
+            var numero = $('#data8').text();
+            var date = $('#data9').text();
+
+            if (name != '' && openradio != '' && comentaire != '' && projet != '' && designation != '' && valide != '' && categorie != '' && numero != '' && date != '') {
                 $.ajax({
                     url: "insert.php",
                     method: "POST",

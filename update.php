@@ -1,4 +1,5 @@
 <?php
+// Tes informations db
 $connect = mysqli_connect("localhost", "root", "", "testing");
 if(isset($_POST["id"]))
 {

@@ -1,15 +1,23 @@
 <?php
 //fetch.php
+// Tes informations db
 $connect = mysqli_connect("localhost", "root", "", "testing");
-$columns = array('first_name', 'last_name');
+$columns = array('name', 'openradio', 'commentaire', 'projet', 'designation', 'valide', 'categorie', 'numero', 'date');
 
 $query = "SELECT * FROM user ";
 
 if(isset($_POST["search"]["value"]))
 {
  $query .= '
- WHERE first_name LIKE "%'.$_POST["search"]["value"].'%" 
- OR last_name LIKE "%'.$_POST["search"]["value"].'%" 
+ WHERE name LIKE "%'.$_POST["search"]["value"].'%" 
+ OR openradio LIKE "%'.$_POST["search"]["value"].'%"
+ OR commentaire LIKE "%'.$_POST["search"]["value"].'%" 
+ OR projet LIKE "%'.$_POST["search"]["value"].'%"
+ OR designation LIKE "%'.$_POST["search"]["value"].'%"
+ OR valide LIKE "%'.$_POST["search"]["value"].'%"
+ OR categorie LIKE "%'.$_POST["search"]["value"].'%"
+ OR numero LIKE "%'.$_POST["search"]["value"].'%"
+ OR date LIKE "%'.$_POST["search"]["value"].'%"
  ';
 }
 
@@ -39,8 +47,15 @@ $data = array();
 while($row = mysqli_fetch_array($result))
 {
  $sub_array = array();
- $sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="first_name">' . $row["first_name"] . '</div>';
- $sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="last_name">' . $row["last_name"] . '</div>';
+ $sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="name">' . $row["name"] . '</div>';
+ $sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="openradio">' . $row["openradio"] . '</div>';
+ $sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="commentaire">' . $row["commentaire"] . '</div>';
+ $sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="projet">' . $row["projet"] . '</div>';
+ $sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="designation">' . $row["designation"] . '</div>';
+ $sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="valide">' . $row["valide"] . '</div>';
+ $sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="categorie">' . $row["categorie"] . '</div>';
+ $sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="numero">' . $row["numero"] . '</div>';
+ $sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="date">' . $row["date"] . '</div>';
  $sub_array[] = '<button type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row["id"].'">Delete</button>';
  $data[] = $sub_array;
 }
