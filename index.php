@@ -177,8 +177,6 @@
             var valide = $('#data6').text();
             var categorie = $('#data7').text();
             var numero = $('#data8').text();
-
-            if (name != '' && openradio != '' && commentaire != '' && projet != '' && designation != '' && valide != '' && categorie != '' && numero != '') {
                 $.ajax({
                     url: "insert.php",
                     method: "POST",
@@ -214,12 +212,6 @@
                         fetch_data();
                     }
                 });
-                setInterval(function() {
-                    $('#alert_message').html('');
-                }, 5000);
-            } else {
-                alert("Both Fields is required");
-            }
         });
 
         $(document).on('click', '.delete', function() {

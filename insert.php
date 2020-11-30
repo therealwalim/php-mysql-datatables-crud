@@ -1,8 +1,6 @@
 <?php
 // Tes informations db
 $connect = mysqli_connect("localhost", "root", "", "testing");
-if(isset($_POST["name"], $_POST["openradio"], $_POST["commentaire"], $_POST["projet"], $_POST["designation"], $_POST["valide"], $_POST["categorie"], $_POST["numero"], $_POST["date"]))
-{
  $name = mysqli_real_escape_string($connect, $_POST["name"]);
  $openradio = mysqli_real_escape_string($connect, $_POST["openradio"]);
  $commentaire = mysqli_real_escape_string($connect, $_POST["commentaire"]);
@@ -17,5 +15,4 @@ if(isset($_POST["name"], $_POST["openradio"], $_POST["commentaire"], $_POST["pro
  {
   echo 'Donnée créée';
  }
-}
 ?>
